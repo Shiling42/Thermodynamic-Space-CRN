@@ -1,0 +1,594 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24850,        586]
+NotebookOptionsPosition[     23926,        561]
+NotebookOutlinePosition[     24320,        577]
+CellTagsIndexPosition[     24277,        574]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Schlogl model for bi-stability", "Title",
+ CellChangeTimes->{{3.96036191401355*^9, 3.960361932729529*^9}, 
+   3.96036197140049*^9},ExpressionUUID->"75e6eda6-7e48-46a3-84a7-\
+5883d8abb16a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Styles", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"PlotTheme", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Scientific\>\"", ",", "\"\<DashedLines\>\""}], "}"}]}], 
+     ",", 
+     RowBox[{"LabelStyle", "->", 
+      RowBox[{"Directive", "[", 
+       RowBox[{
+        RowBox[{"FontFamily", "->", "\"\<Helvetica\>\""}], ",", "Black", ",", 
+        
+        RowBox[{"FontSize", "->", "20"}]}], "]"}]}], ",", 
+     RowBox[{"FrameStyle", "->", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{"FontSize", "->", "20"}], ",", 
+        RowBox[{"Thickness", "[", ".002", "]"}]}], "]"}]}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9286187103749037`*^9, 3.9286187103774967`*^9}, {
+   3.92863295080989*^9, 3.928632953673407*^9}, 
+   3.960361910246077*^9},ExpressionUUID->"1e6a2877-e6cc-473f-aef0-\
+4ce0f1ab3f03"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"LogLinearPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Gamma]", " ", 
+         RowBox[{"x", "^", "2"}], " ", 
+         RowBox[{"(", 
+          RowBox[{"xa", "-", "x"}], ")"}]}], "+", 
+        RowBox[{"(", 
+         RowBox[{"xb", "-", "x"}], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0.01", ",", 
+         RowBox[{
+          RowBox[{"Max", "[", 
+           RowBox[{"xa", ",", "xb"}], "]"}], "*", "1.2"}]}], "}"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.015", ",", 
+            RowBox[{
+             RowBox[{"Max", "[", 
+              RowBox[{"xa", ",", "xb"}], "]"}], "*", "1.3"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "0.12"}], ",", "0.2"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameTicks", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "0.1"}], ",", "0", ",", "0.1", ",", "0.2"}], "}"}],
+             ",", "None"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"Automatic", ",", "Automatic"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Prolog", "->", 
+        RowBox[{"{", 
+         RowBox[{"LightGreen", ",", 
+          RowBox[{"Opacity", "[", "0.5", "]"}], ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xb", "]"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xb", "]"}], ",", "1"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xa", "]"}], ",", "1"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xa", "]"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}]}], "}"}], "]"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Epilog", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", "\"\<#3572EF\>\"", "]"}], ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xb", "]"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xb", "]"}], ",", "1"}], "}"}]}], "}"}], 
+           "]"}], ",", 
+          RowBox[{"RGBColor", "[", "\"\<#C80036\>\"", "]"}], ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xa", "]"}], ",", "1"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Log", "[", "xa", "]"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}]}], "}"}], "]"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<x\>\"", ",", "\"\<dx/dt\>\""}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", "Gray", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Evaluate", "@", "Styles"}], ",", 
+       RowBox[{"AspectRatio", "->", 
+        RowBox[{"1", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"FrameStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Black", ",", 
+          RowBox[{"FontSize", "->", "20"}]}], "]"}]}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"RegionPlot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Log", "[", "xb", "]"}], "<=", "x", "<=", 
+          RowBox[{"Log", "[", " ", "xa", "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"Log", "[", "xb", "]"}], "*", "2"}], ",", 
+           RowBox[{
+            RowBox[{"Log", "[", "xa", "]"}], "/", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"PlotStyle", "->", 
+          RowBox[{"{", 
+           RowBox[{"LightBlue", ",", 
+            RowBox[{"Opacity", "[", "0.5", "]"}]}], "}"}]}]}], "]"}], ","}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Sol", "=", 
+         RowBox[{"Solve", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"\[Gamma]", " ", 
+              SuperscriptBox["x", "2"], 
+              RowBox[{"(", 
+               RowBox[{"xa", "-", "x"}], ")"}]}], "+", 
+             RowBox[{"(", 
+              RowBox[{"xb", "-", "x"}], ")"}]}], "==", "0"}], ",", "x"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"ListLogLinearPlot", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x", ",", "0"}], "}"}], "/.", "Sol"}], "}"}], "]"}]}], 
+      "]"}]}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xa", ",", "0.8"}], "}"}], ",", "0.1", ",", "2", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xb", ",", "0.02"}], "}"}], ",", "0", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]", ",", "8"}], "}"}], ",", "0", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.928627320076687*^9, 3.928627356159869*^9}, {
+   3.928627662464691*^9, 3.928627740520012*^9}, {3.928627873340681*^9, 
+   3.9286278935546503`*^9}, {3.928627924142819*^9, 3.92862813126434*^9}, 
+   3.928628285119892*^9, {3.928628496253231*^9, 3.9286286024161587`*^9}, {
+   3.9286286367801332`*^9, 3.928628673662445*^9}, {3.9286302417642317`*^9, 
+   3.928630245593238*^9}, {3.928630408988522*^9, 3.928630461790701*^9}, {
+   3.928630525637457*^9, 3.928630576298973*^9}, {3.9286307563251457`*^9, 
+   3.928630756851101*^9}, {3.928630833909292*^9, 3.9286309294314537`*^9}, {
+   3.9286310257949953`*^9, 3.928631106214559*^9}, {3.928631160408304*^9, 
+   3.928631178958872*^9}, {3.928631215517726*^9, 3.928631239331399*^9}, {
+   3.9286313147340393`*^9, 3.928631378557329*^9}, {3.928632031596025*^9, 
+   3.928632034079584*^9}, {3.928632940475503*^9, 3.9286329413702993`*^9}, 
+   3.928634279782765*^9, {3.9286343323118963`*^9, 3.9286344127628107`*^9}, {
+   3.928634474448434*^9, 3.928634509328639*^9}, {3.9286346390419407`*^9, 
+   3.928634651739097*^9}, {3.9286346986056747`*^9, 3.928634703044142*^9}, {
+   3.955908375289196*^9, 3.955908379876243*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"9c876f8f-eb6c-410d-8008-e4d5dad69086"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`xa$$ = 0.8, $CellContext`xb$$ = 
+    0.02, $CellContext`\[Gamma]$$ = 8, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`xa$$], 0.8}, 0.1, 2}, {{
+       Hold[$CellContext`xb$$], 0.02}, 0, 1}, {{
+       Hold[$CellContext`\[Gamma]$$], 8}, 0, 10}}, Typeset`size$$ = {
+    360., {100., 105.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`xa$$ = 0.8, $CellContext`xb$$ = 
+        0.02, $CellContext`\[Gamma]$$ = 8}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LogLinearPlot[$CellContext`\[Gamma]$$ $CellContext`x^2 \
+($CellContext`xa$$ - $CellContext`x) + ($CellContext`xb$$ - $CellContext`x), \
+{$CellContext`x, 0.01, Max[$CellContext`xa$$, $CellContext`xb$$] 1.2}, 
+         PlotRange -> {{
+           0.015, Max[$CellContext`xa$$, $CellContext`xb$$] 1.3}, {-0.12, 
+           0.2}}, FrameTicks -> {{{-0.1, 0, 0.1, 0.2}, None}, {
+           Automatic, Automatic}}, Prolog -> {LightGreen, 
+           Opacity[0.5], 
+           Polygon[{{
+              Log[$CellContext`xb$$], -1}, {
+              Log[$CellContext`xb$$], 1}, {
+              Log[$CellContext`xa$$], 1}, {
+              Log[$CellContext`xa$$], -1}}]}, Epilog -> {
+           RGBColor["#3572EF"], 
+           Line[{{
+              Log[$CellContext`xb$$], -1}, {
+              Log[$CellContext`xb$$], 1}}], 
+           RGBColor["#C80036"], 
+           Line[{{
+              Log[$CellContext`xa$$], 1}, {
+              Log[$CellContext`xa$$], -1}}]}, FrameLabel -> {"x", "dx/dt"}, 
+         PlotStyle -> {Gray}, 
+         Evaluate[$CellContext`Styles], AspectRatio -> 1/2, FrameStyle -> 
+         Directive[Black, FontSize -> 20]], 
+        With[{$CellContext`Sol = 
+          Solve[$CellContext`\[Gamma]$$ $CellContext`x^2 ($CellContext`xa$$ - \
+$CellContext`x) + ($CellContext`xb$$ - $CellContext`x) == 0, $CellContext`x]}, 
+         ListLogLinearPlot[{
+           ReplaceAll[{$CellContext`x, 0}, $CellContext`Sol]}]]], 
+      "Specifications" :> {{{$CellContext`xa$$, 0.8}, 0.1, 2, Appearance -> 
+         "Labeled"}, {{$CellContext`xb$$, 0.02}, 0, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`\[Gamma]$$, 8}, 0, 10, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {173., 179.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9286276954889393`*^9, 3.928627740902528*^9}, {
+   3.928627875681348*^9, 3.928627894349036*^9}, {3.928627924888959*^9, 
+   3.9286280328993473`*^9}, {3.928628068361112*^9, 3.928628131538582*^9}, {
+   3.9286285182013683`*^9, 3.928628674020864*^9}, 3.9286288550205936`*^9, 
+   3.928630246151388*^9, {3.928630386993621*^9, 3.928630462408124*^9}, {
+   3.928630534921063*^9, 3.928630576575409*^9}, 3.928630757351301*^9, {
+   3.928630834808668*^9, 3.9286309297436934`*^9}, {3.92863103100532*^9, 
+   3.9286310430296717`*^9}, {3.928631075049512*^9, 3.9286311005111*^9}, 
+   3.928631216850642*^9, 3.92863125739764*^9, {3.928631320943851*^9, 
+   3.928631387831387*^9}, {3.928632032015959*^9, 3.928632034530292*^9}, {
+   3.928632941733448*^9, 3.928632957055791*^9}, 3.928634280461555*^9, {
+   3.928634352762526*^9, 3.928634362956414*^9}, {3.928634397156926*^9, 
+   3.928634413526696*^9}, 3.9286344780316668`*^9, {3.9286346397574778`*^9, 
+   3.928634652295754*^9}, 3.928634703926306*^9, 3.92863812423904*^9, {
+   3.955908376605628*^9, 3.9559083805033216`*^9}, 3.955980966082632*^9, 
+   3.960361898984618*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"46b79ea6-a47a-4cb9-a192-b2c32ae1d849"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"LogPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Evaluate", "@", 
+        RowBox[{"{", 
+         RowBox[{"xbb", ",", 
+          RowBox[{"xbb", "*", 
+           RowBox[{"Exp", "[", "Ac", "]"}]}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"Ac", ",", "0", ",", "5"}], "}"}], ",", 
+       RowBox[{"Filling", "->", 
+        RowBox[{"{", 
+         RowBox[{"2", "->", 
+          RowBox[{"{", "1", "}"}]}], "}"}]}], ",", 
+       RowBox[{"FillingStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{
+          RowBox[{"Opacity", "[", "0.5", "]"}], ",", "LightGreen"}], "]"}]}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotTheme", "->", "\"\<Scientific\>\""}], ",", 
+       RowBox[{"AspectRatio", "->", 
+        RowBox[{"1", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"RGBColor", "[", "\"\<#3572EF\>\"", "]"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"RGBColor", "[", "\"\<#C80036\>\"", "]"}], "}"}]}], 
+         "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"LabelStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{
+          RowBox[{"FontFamily", "->", "\"\<Helvetica\>\""}], ",", "Black", 
+          ",", 
+          RowBox[{"FontSize", "->", "20"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Black", ",", 
+          RowBox[{"FontSize", "->", "20"}], ",", 
+          RowBox[{"Thickness", "[", ".002", "]"}]}], "]"}]}], ",", 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*SubscriptBox[\(A\), \(e\)]\)/RT\>\"", ",", 
+          "\"\<\!\(\*SuperscriptBox[\(x\), \(ss\)]\)\>\""}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"LogPlot", "[", 
+      RowBox[{
+       RowBox[{"Evaluate", "@", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "/.", "sol"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"xb", "->", "xbb"}], ",", 
+            RowBox[{"xa", "->", 
+             RowBox[{"xbb", "*", 
+              RowBox[{"Exp", "[", "Ac", "]"}]}]}], ",", 
+            RowBox[{"\[Gamma]", "->", "\[Gamma]1"}]}], "}"}]}], "}"}]}], ",", 
+       
+       RowBox[{"{", 
+        RowBox[{"Ac", ",", "0", ",", "6"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*SubscriptBox[\(A\), \(e\)]\)\>\"", ",", 
+          "\"\<\!\(\*SuperscriptBox[\(x\), \(ss\)]\)\>\""}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "0.2"}], ",", "5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.02", ",", "5"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotTheme", "->", "\"\<Scientific\>\""}], ",", 
+       RowBox[{"AspectRatio", "->", 
+        RowBox[{"1", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"LabelStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{
+          RowBox[{"FontFamily", "->", "\"\<Helvetica\>\""}], ",", "Black", 
+          ",", 
+          RowBox[{"FontSize", "->", "20"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Black", ",", 
+          RowBox[{"FontSize", "->", "20"}], ",", 
+          RowBox[{"Thickness", "[", ".002", "]"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Thick", ",", "Gray"}], "}"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Style", " ", "for", " ", 
+            RowBox[{"Sin", "[", "x", "]"}]}], "*)"}], 
+          RowBox[{"{", "Gray", "}"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Style", " ", "for", " ", 
+            RowBox[{"Cos", "[", "x", "]"}]}], "*)"}], 
+          RowBox[{"{", 
+           RowBox[{"Dashed", ",", "Gray"}], "}"}]}], "   ", 
+         RowBox[{"(*", 
+          RowBox[{"Style", " ", "for", " ", "x"}], "*)"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\!\(\*SubscriptBox[\(A\), \(e\)]\)/RT\>\"", ",", 
+          "\"\<\!\(\*SuperscriptBox[\(x\), \(ss\)]\)\>\""}], "}"}]}]}], 
+      RowBox[{"(*", 
+       RowBox[{",", 
+        RowBox[{"MaxRecursion", "->", "11"}], ",", 
+        RowBox[{"PlotPoints", "->", "800"}]}], "*)"}], "]"}]}], 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xbb", ",", "0.03"}], "}"}], ",", "0", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]1", ",", "8"}], "}"}], ",", "0", ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.928630006684016*^9, 3.928630036169798*^9}, {
+   3.9286301207443047`*^9, 3.928630202827037*^9}, {3.928630310666608*^9, 
+   3.928630324978863*^9}, {3.928630491210231*^9, 3.9286305130709267`*^9}, {
+   3.928630672176317*^9, 3.928630794534816*^9}, {3.928632907538938*^9, 
+   3.928632931771978*^9}, {3.928633279861639*^9, 3.928633292366473*^9}, {
+   3.928633354413793*^9, 3.928633378936696*^9}, {3.92863366796066*^9, 
+   3.92863367417422*^9}, {3.928633730377092*^9, 3.928633793090499*^9}, {
+   3.928634000925393*^9, 3.92863421089922*^9}, {3.928634242502862*^9, 
+   3.928634257125285*^9}, {3.928634302432749*^9, 3.92863430636021*^9}, 
+   3.928634404774735*^9, {3.928634496214847*^9, 3.9286344975876513`*^9}, {
+   3.928634548202161*^9, 3.92863461233926*^9}, {3.928634684142992*^9, 
+   3.9286346872148533`*^9}, 3.928635075984234*^9, {3.928635315332837*^9, 
+   3.92863532540014*^9}, 3.9286381265038*^9, {3.960361946647388*^9, 
+   3.9603619651716967`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"9cfe54ee-323f-4511-ace3-5febff5b9bb8"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`xbb$$ = 0.03, $CellContext`\[Gamma]1$$ = 8, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`xbb$$], 0.03}, 0, 1}, {{
+       Hold[$CellContext`\[Gamma]1$$], 8}, 0, 10}}, Typeset`size$$ = {
+    360., {98., 103.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`xbb$$ = 0.03, $CellContext`\[Gamma]1$$ = 
+        8}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LogPlot[
+         Evaluate[{$CellContext`xbb$$, $CellContext`xbb$$ 
+           Exp[$CellContext`Ac]}], {$CellContext`Ac, 0, 5}, 
+         Filling -> {2 -> {1}}, FillingStyle -> Directive[
+           Opacity[0.5], LightGreen], PlotTheme -> "Scientific", AspectRatio -> 
+         1/2, PlotStyle -> {{
+            RGBColor["#3572EF"]}, {
+            RGBColor["#C80036"]}}, LabelStyle -> 
+         Directive[FontFamily -> "Helvetica", Black, FontSize -> 20], 
+         FrameStyle -> Directive[Black, FontSize -> 20, 
+           Thickness[0.002]], 
+         FrameLabel -> {
+          "\!\(\*SubscriptBox[\(A\), \(e\)]\)/RT", 
+           "\!\(\*SuperscriptBox[\(x\), \(ss\)]\)"}], 
+        LogPlot[
+         Evaluate[{
+           ReplaceAll[
+            
+            ReplaceAll[$CellContext`x, $CellContext`sol], {$CellContext`xb -> \
+$CellContext`xbb$$, $CellContext`xa -> $CellContext`xbb$$ 
+              Exp[$CellContext`Ac], $CellContext`\[Gamma] -> $CellContext`\
+\[Gamma]1$$}]}], {$CellContext`Ac, 0, 6}, 
+         FrameLabel -> {
+          "\!\(\*SubscriptBox[\(A\), \(e\)]\)", 
+           "\!\(\*SuperscriptBox[\(x\), \(ss\)]\)"}, 
+         PlotRange -> {{-0.2, 5}, {0.02, 5}}, PlotTheme -> "Scientific", 
+         AspectRatio -> 1/2, LabelStyle -> 
+         Directive[FontFamily -> "Helvetica", Black, FontSize -> 20], 
+         FrameStyle -> Directive[Black, FontSize -> 20, 
+           Thickness[0.002]], 
+         PlotStyle -> {{Thick, Gray}, {Gray}, {Dashed, Gray}}, 
+         FrameLabel -> {
+          "\!\(\*SubscriptBox[\(A\), \(e\)]\)/RT", 
+           "\!\(\*SuperscriptBox[\(x\), \(ss\)]\)"}]], 
+      "Specifications" :> {{{$CellContext`xbb$$, 0.03}, 0, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`\[Gamma]1$$, 8}, 0, 10, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {157., 163.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9286340283945417`*^9, 3.928634078899254*^9}, {
+   3.928634120143293*^9, 3.928634211261709*^9}, {3.928634243402461*^9, 
+   3.928634257691402*^9}, {3.928634303291032*^9, 3.9286343068598843`*^9}, 
+   3.92863440517861*^9, {3.928634532779093*^9, 3.928634613046673*^9}, 
+   3.928634688659154*^9, 3.9286350768470917`*^9, {3.928638122239769*^9, 
+   3.928638130501956*^9}, 3.9559809662609997`*^9, 3.955981010638364*^9, 
+   3.960361899281522*^9, {3.960361940307225*^9, 3.960361965414837*^9}},
+ CellLabel->"Out[11]=",ExpressionUUID->"05af1683-ec70-4cd8-97bc-aba812a6c6f8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{840, 891},
+WindowMargins->{{540, Automatic}, {Automatic, 11}},
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e3cdb66-6373-4edd-9fc1-39473fc9825a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 194, 3, 98, "Title",ExpressionUUID->"75e6eda6-7e48-46a3-84a7-5883d8abb16a"],
+Cell[777, 27, 888, 24, 73, "Input",ExpressionUUID->"1e6a2877-e6cc-473f-aef0-4ce0f1ab3f03"],
+Cell[CellGroupData[{
+Cell[1690, 55, 7350, 182, 482, "Input",ExpressionUUID->"9c876f8f-eb6c-410d-8008-e4d5dad69086"],
+Cell[9043, 239, 4456, 82, 371, "Output",ExpressionUUID->"46b79ea6-a47a-4cb9-a192-b2c32ae1d849"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13536, 326, 6500, 154, 532, "Input",ExpressionUUID->"9cfe54ee-323f-4511-ace3-5febff5b9bb8"],
+Cell[20039, 482, 3859, 75, 339, "Output",ExpressionUUID->"05af1683-ec70-4cd8-97bc-aba812a6c6f8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
